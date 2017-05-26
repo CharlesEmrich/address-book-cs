@@ -1,10 +1,17 @@
 namespace AddressBook.Objects
 {
-  public class AddressBook
+  public class Address
   {
     private string _street;
     private string _city;
     private string _zip;
+
+    public Address (string street, string city, string zip)
+    {
+      _street = street;
+      _city   = city;
+      _zip    = zip;
+    }
 
     public string GetStreet()
     {
@@ -28,7 +35,7 @@ namespace AddressBook.Objects
     }
     public void SetZip(string newZip)
     {
-      _zip = newName;
+      _zip = newZip;
     }
   }
 }

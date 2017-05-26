@@ -58,7 +58,7 @@ namespace AddressBook.Objects
     {
       return _instances;
     }
-    public Contact Find(int searchId)
+    public static Contact Find(int searchId)
     {
       return _instances[searchId];
     }
