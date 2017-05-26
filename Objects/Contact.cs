@@ -1,17 +1,25 @@
+using System.Collections.Generic;
+
 namespace AddressBook.Objects
 {
   public class Contact
   {
+    private int     _id;
     private string  _name;
     private string  _telephone;
     private string  _email;
     private Address _address;
+    private static List<Contact> _instances = new List<Contact> {};
 
-    public Contact(string name, string telephone, string email)
+    public Contact(string name, string telephone, string email, Address address)
     {
+      _id        = _instances.Count;
       _name      = name;
       _telephone = telephone;
       _email     = email;
+      _address   = address;
+
+      _instances.Add(this);
     }
 
     public string GetName()
@@ -37,6 +45,22 @@ namespace AddressBook.Objects
     public void SetEmail(string newEmail)
     {
       _email = newEmail;
+    }
+    public Address GetAddress()
+    {
+      return _address;
+    }
+    public void SetAddress(Address newAddress)
+    {
+      _address = newAddress;
+    }
+    public static List<Contact> GetAll()
+    {
+      return _instances;
+    }
+    public Contact Find(int searchId)
+    {
+      return _instances[searchId];
     }
   }
 }

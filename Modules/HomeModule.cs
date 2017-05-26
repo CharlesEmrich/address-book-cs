@@ -8,23 +8,20 @@ namespace AddressBook
   {
     public HomeModule()
     {
-      Get["/"] = _ => View["index.cshtml", Job.GetAll()];
-      Get["/jobs/new"] = _ => View["job-form.cshtml"];
+      Get["/"] = _ => View["index.cshtml", Contact.GetAll()];
+      Get["/contacts/new"] = _ => View["contact-form.cshtml"];
       Post["/"] = _ => {
-        Contact newContact = new Contact(Request.Form["new-contact-name"],
-                                         Request.Form["new-telephone"],
-                                         Request.Form["new-email"]);
-        Job newJob = new Job (Request.Form["new-title"],
-                              Request.Form["new-description"],
-                              newContact);
-        return View["index.cshtml", Job.GetAll()];
+        Address newAddress = new Address(Request.Form["street"],
+                                         Request.Form["city"],
+                                         Request.Form["zip"]);
+        Contact newContact = new Contact(Request.Form["contact-name"],
+                                         Request.Form["telephone"],
+                                         Request.Form["email"],
+                                         newAddress);
+        return View["index.cshtml", Contact.GetAll()];
       };
-      Post["/jobs/cleared"] = _ => {
-        Job.ClearAll();
-        return View["jobs_cleared.cshtml"];
-      };
-      Get["/jobs/{id}"] = parameters => {
-        return View["job-listing.cshtml", Job.SearchJobs(parameters.id)];
+      Get["/contacts/{id}"] = parameters => {
+        return View["job-listing.cshtml", Contact.Find(parameters.id)];
       };
     }
   }
