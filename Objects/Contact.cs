@@ -10,16 +10,18 @@ namespace AddressBook.Objects
     private string  _email;
     private Address _address;
     private static List<Contact> _instances = new List<Contact> {};
+    private static int _idCounter = 0;
 
     public Contact(string name, string telephone, string email, Address address)
     {
-      _id        = _instances.Count;
+      _id        = _idCounter;
       _name      = name;
       _telephone = telephone;
       _email     = email;
       _address   = address;
 
       _instances.Add(this);
+      _idCounter ++;
     }
 
     public int GetId()
