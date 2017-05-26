@@ -18,7 +18,6 @@ namespace AddressBook
                                          Request.Form["telephone"],
                                          Request.Form["email"],
                                          newAddress);
-        // Dictionary<string, object> newDict = new Dictionary <string, object> {{"contact", newContact}, {"justCreated", {justCreated: true}}};
         return View["contact-details.cshtml", newContact];
       };
       Get["/contacts/{id}"] = parameters => {

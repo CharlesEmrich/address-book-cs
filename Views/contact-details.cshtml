@@ -3,11 +3,10 @@
   var url = Request.Path;
 }
 
-@url
-
+@if(@url == "/contacts/new")
+{
   <h2>Here's your new contact:</h2>
-
-
+}
 <address>
   <strong>@Model.GetName()</strong><br>
   @Model.GetAddress().GetStreet()<br>
