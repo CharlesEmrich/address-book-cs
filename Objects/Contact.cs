@@ -1,10 +1,11 @@
-namespace JobBoard.Objects
+namespace AddressBook.Objects
 {
   public class Contact
   {
-    private string _name;
-    private string _telephone;
-    private string _email;
+    private string  _name;
+    private string  _telephone;
+    private string  _email;
+    private Address _address;
 
     public Contact(string name, string telephone, string email)
     {

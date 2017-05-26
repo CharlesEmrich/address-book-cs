@@ -1,8 +1,8 @@
 using Nancy;
-using JobBoard.Objects;
+using AddressBook.Objects;
 using System.Collections.Generic;
 
-namespace JobBoard
+namespace AddressBook
 {
   public class HomeModule : NancyModule
   {

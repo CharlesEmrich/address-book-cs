@@ -6,7 +6,7 @@ using Nancy.ViewEngines.Razor;
 using System.Collections.Generic;
 
 
-namespace JobBoard
+namespace AddressBook
 {
   public class Startup
   {
