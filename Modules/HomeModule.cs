@@ -13,6 +13,19 @@ namespace AddressBook
       Get["/contacts/{id}"] = parameters => {
         return View["contact-details.cshtml", Contact.Find(parameters.id)];
       };
+      Get["/contacts/search"] = _ => {
+        string query = Request.Query["search-string"];
+        List<Contact> searchList = Contact.GetAll().FindAll(delegate(Contact ctct){return ctct.GetName().Contains(query);});
+        // List<Contact> searchList = new List<Contact> {};
+        // foreach(Contact contact in Contact.GetAll())
+        // {
+        //   if (contact.GetName().Contains(query)) {
+        //     searchList.Add(contact);
+        //   }
+        // }
+
+        return View["list-view.cshtml", searchList];
+      };
       Post["/contacts/new"] = _ => {
         Address newAddress = new Address(Request.Form["street"],
                                          Request.Form["city"],

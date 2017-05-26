@@ -10,7 +10,7 @@ A barebones implementation of a system for storing contact information. Currentl
 3. Point your web browser to localhost:5004 to begin using the app.
 
 ### Known Bugs
-There are currently no known bugs with the app.
+Current implementation of Search functionality is case-sensitive.
 
 #### License
 This project is licensed under the MIT License.
