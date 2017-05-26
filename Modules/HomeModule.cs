@@ -9,8 +9,8 @@ namespace AddressBook
     public HomeModule()
     {
       Get["/"] = _ => View["index.cshtml", Contact.GetAll()];
-      Get["/contacts/new"] = _ => View["contact-form.cshtml"];
-      Post["/"] = _ => {
+      Get["/contacts/form"] = _ => View["contact-form.cshtml"];
+      Post["/contacts/new"] = _ => {
         Address newAddress = new Address(Request.Form["street"],
                                          Request.Form["city"],
                                          Request.Form["zip"]);
@@ -18,13 +18,14 @@ namespace AddressBook
                                          Request.Form["telephone"],
                                          Request.Form["email"],
                                          newAddress);
-        return View["index.cshtml", Contact.GetAll()];
+        // Dictionary<string, object> newDict = new Dictionary <string, object> {{"contact", newContact}, {"justCreated", {justCreated: true}}};
+        return View["contact-details.cshtml", newContact];
       };
       Get["/contacts/{id}"] = parameters => {
         return View["contact-details.cshtml", Contact.Find(parameters.id)];
       };
       Post["/contacts/clear"] = _ => {
-        Contact.ClearAll();
+        // Contact.ClearAll();
         return View["contact-clear.cshtml"];
       };
     }

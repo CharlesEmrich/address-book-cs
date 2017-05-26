@@ -1,6 +1,12 @@
 @{
   Layout="Shared/_Layout.cshtml";
+  var url = Request.Path;
 }
+
+@url
+
+  <h2>Here's your new contact:</h2>
+
 
 <address>
   <strong>@Model.GetName()</strong><br>
