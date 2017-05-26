@@ -1,0 +1,12 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<h2>@Model.GetTitle()</h2>
+<ul>
+  <li>Job Description: @Model.GetDescription()</li>
+  <li>Contact Name: @Model.GetContactInfo().GetName()</li>
+  <li>Contact Phone: @Model.GetContactInfo().GetTelephone()</li>
+  <li>Contact Email: @Model.GetContactInfo().GetEmail()</li>
+</ul>
+<p><a href="/">Back to homepage.</a></p>
