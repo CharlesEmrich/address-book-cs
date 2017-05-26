@@ -28,8 +28,9 @@ namespace AddressBook
         return View["contact-clear.cshtml"];
       };
       Post["/contacts/delete/{id}"] = parameters => {
-        
-        return View["index.cshtml", Contact.Find(parameters.id)];
+        Contact.GetAll().Find(delegate(Contact ctct){return ctct.GetId() == parameters.id;}).Delete();
+        //Don't forget to refactor index to include a reference to the deletion.
+        return View["index.cshtml", Contact.GetAll()];
       };
     }
   }

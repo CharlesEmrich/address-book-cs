@@ -72,5 +72,10 @@ namespace AddressBook.Objects
     {
       _instances = new List<Contact> {};
     }
+    public void Delete()
+    {
+      _instances.Remove(this);
+      //Question: This does what the program needs, but it seems like the object instance is probably still stored in memory. How do I stop that?
+    }
   }
 }
