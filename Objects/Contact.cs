@@ -22,6 +22,10 @@ namespace AddressBook.Objects
       _instances.Add(this);
     }
 
+    public int GetId()
+    {
+      return _id;
+    }
     public string GetName()
     {
       return _name;

@@ -1,0 +1,11 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<address>
+  <strong>@Model.GetName()</strong><br>
+  @Model.GetAddress().GetStreet()<br>
+  @Model.GetAddress().GetCity(), @Model.GetAddress().GetZip()<br>
+  <abbr title="Phone">P:</abbr> @Model.GetTelephone()
+  <a href="mailto:@Model.GetEmail()">@Model.GetEmail()</a>
+</address>

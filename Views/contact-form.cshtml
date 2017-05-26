@@ -1,0 +1,41 @@
+@{
+  Layout="Shared/_Layout.cshtml";
+}
+
+<form class="form-horizontal" action="/" method="post">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <label for="contact-name">Name:</label>
+        <input class="form-control" type="text" name="contact-name">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="telephone">Phone:</label>
+        <input class="form-control" type="text" name="telephone">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input class="form-control" type="text" name="email">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="sr-only" for="street">Street Address:</label>
+        <input class="form-control" type="text" placeholder="Street Address" name="street">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="city">City:</label>
+        <input class="form-control" type="text" placeholder="City" name="city">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="zip">Zip Code:</label>
+        <input class="form-control" type="number" placeholder="Zip Code" name="zip">
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-default" type="submit">Add Contact</button>
+</form>

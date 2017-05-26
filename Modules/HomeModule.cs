@@ -21,7 +21,7 @@ namespace AddressBook
         return View["index.cshtml", Contact.GetAll()];
       };
       Get["/contacts/{id}"] = parameters => {
-        return View["job-listing.cshtml", Contact.Find(parameters.id)];
+        return View["contact-details.cshtml", Contact.Find(parameters.id)];
       };
     }
   }

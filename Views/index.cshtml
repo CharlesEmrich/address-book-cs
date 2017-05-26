@@ -1,5 +1,21 @@
 @{
   Layout="Shared/_Layout.cshtml";
 }
-
-<p>Hello World</p>
+<div class="row">
+  <div class="col-md-12">
+    @if(@Model.Count > 0)
+    {
+      <ul>
+        @foreach(var contact in @Model)
+        {
+          <li><a href="/contacts/@contact.GetId()">@contact.GetName()</a></li>
+        }
+      </ul>
+    } else {
+      <p>No contacts yet. Click the button at left to add one.</p>
+    }
+  </div>
+</div>
+<div class="row">
+  <a href="/contacts/clear" class="btn btn-default">Clear Contact List</a>
+</div>
