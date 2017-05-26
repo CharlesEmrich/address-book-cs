@@ -66,5 +66,9 @@ namespace AddressBook.Objects
     {
       return _instances[searchId];
     }
+    public static void ClearAll()
+    {
+      _instances = new List<Contact> {};
+    }
   }
 }
